@@ -1,0 +1,532 @@
+@import "./variables";
+@import "./mixins";
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rakkas&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Almarai', sans-serif;
+}
+.section-title{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.span-main{
+    color: $main-color;
+}
+
+header{
+    .navbar{
+        padding: 20px 50px;
+        .navbar-brand{
+            margin-right: 110px;
+            font-size: 22px;
+        }
+        
+        
+        .nav-link{
+            color: $black-color;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: all .5s;
+            border-radius: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            &:hover{
+                color: white;
+                background-color: $main-color;
+                padding: 5px 15px;
+            }
+            &.active{
+                color: white;
+                background-color: $main-color;
+                padding: 5px 15px;
+            }
+        }
+        .button-login{
+            margin-right: 10px;
+            padding: 5px 20px;
+            transition: all 0.5s;
+            &:hover{
+                color: $main-color;
+                background-color: white;
+                border: 1px solid $main-color;
+            }
+        }
+        .button-singup{
+            @include button($main-color, white, $main-color);
+        }
+    }
+    .header-jobs{
+        padding: 150px 0;
+        .header-title{
+            font-size: 60px;
+            font-weight: 700;
+            width: 550px;
+            margin: 0px auto 30px ;
+        }
+        .header-candidate{
+            font-size: 22px;
+            margin-bottom: 60px;
+        }
+        form{    
+            padding:5px;  
+            background-color: white;
+            box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.2);
+            border-radius: 20px; 
+            margin: auto;
+            width: 750px;
+            .search-input{
+                position: relative;
+                input{                
+                    padding: 20px 45px;
+                    border: none;  
+                    font-size: 16px;
+                    color: $border-color;
+                    &:focus{
+                        outline: none;
+                    }                  
+                }
+                img{
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                #search-keyword{
+                    border-right: 1px solid $border-color;
+                    margin-right: 25px;
+                }
+            }
+            .button{
+                @include button($main-color, white, $main-color);
+                border-radius: 20px;
+                font-size: 18px;
+                padding: 10px 30px;
+            }
+            
+        }
+    }
+}
+main{
+    section{
+        padding: 60px 30px;
+        &#category{
+            background-color: $gray-color;
+            .card-serv{
+                background-color: white;
+                padding: 20px;
+                margin-bottom: 50px;
+                height: 150px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                img{
+                    margin-top: 10px;
+                }
+                h4{
+                    font-size: 21px;
+                    margin-left: 20px;
+                }
+                p{
+                    font-size: 18px;
+                    margin-left: 20px;
+                }
+            }
+        }
+        &#jobs{
+            .more-button{
+                @include button(white,$main-color,$main-color);
+                width: auto;
+                border-radius: 10px;
+                font-size: 18px;
+            }
+            .card-job{
+                padding: 20px;
+                border: 1px solid $border-color-2;
+                border-radius: 20px;
+                margin-bottom: 40px;
+                img{
+                    border-radius: 5px;
+                    margin-top: 10px; 
+                }
+                .job{
+                    &-company{
+                        font-size: 18px;
+                        margin-bottom: 5px;
+                    }
+                    &-category{
+                        font-size: 12px;
+                    }
+                    &-title{
+                        font-size: 25px;
+                    }
+                    &-description{
+                        font-size: 12px;
+                        color: $p-color;
+                    }
+                    &-apply{
+                        h5{
+                            font-size:16px;
+                        }
+                        span{
+                            font-size: 14px;
+                            font-weight: 400
+                        }
+                        .button{
+                            @include button($gray-color,$main-color,$gray-color);
+                        }
+                    }
+                }
+                
+            }
+        }
+        &#cv{
+            padding-bottom: 200px;
+            .cv-all{
+                background-color: $main-color;
+                padding: 50px 5px;
+                border-radius: 20px;
+            }
+            h4{
+                margin-top: 120px;
+                font-size: 40px;
+                color: white;
+            }
+            p{
+                font-size: 18px;
+                color: white;
+                font-weight: 700;
+            }
+            .upload{
+               input{
+                    display: none;
+                }
+                label{
+                    cursor: pointer;
+                    //@include button(white, $main-color,$main-color);
+                    color: $main-color;
+                    background-color: white;
+                    padding: 10px 15px;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    padding-top: 200px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: $gray-color;
+    position: relative;
+    .join-newspaper{
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translate(50%,-50%);
+        background-color: white;
+        width: 80%;
+        height: 210px;
+        display: flex;
+        align-items: center ;
+        border-radius: 20px;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+        h2{
+            font-size: 50px;
+        }
+        .news-email{
+            background-color: white;
+            display: inline-block;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-top: 30px;
+            input{
+                border: none;
+                outline: none;
+                font-size: 12px;
+                color: $border-color-2;
+                padding-right: 80px;
+                margin-left: 10px;
+            }
+            .button{
+                @include button($main-color, white,$main-color);
+                border-radius: 15px;
+            }
+        }
+    }
+    .footer-nav{
+            text-align: center;
+            .nav-link{
+                transition: all .5s;
+                color: $black-color;
+                font-size: 25px;
+                &:hover{
+                    color: $main-color;
+                }
+            }
+    }
+    .copyright{
+        font-size: 14px;
+        color: $black-color;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:1400px){
+    main{
+        section#cv{
+            h4{
+                margin-top: 5px;
+            }
+        }
+    }
+}
+@media (max-width:1200px){
+    header{
+        .navbar{
+            .navbar-brand{
+                margin-right: 30px;
+            }
+            .nav-link{
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+    }
+    main{
+        section#jobs{
+            .card-job{
+                img{
+                    margin-top: 0;
+                }
+            }
+        }
+        
+    }
+    footer{
+        .join-newspaper{
+            h2{
+                font-size: 40px;
+            }
+        }
+        .footer-nav{
+                .nav-link{
+                    font-size: 18px;
+                }
+        }
+    }
+}
+@media (max-width:991.5px){
+    header{
+        .navbar{
+            .nav-link{
+                text-align: center;
+                margin-top: 20px;
+            }
+            form{
+                margin-top: 20px;
+            }
+        }
+        .header-jobs{
+            form{
+                width: auto;
+                .search-input{
+                    input{
+                        padding: 20px 10px 20px 45px;
+                    }
+                    #search-keyword{
+                        margin-right: 10px;
+                    }
+                }
+                .button{
+                    padding: 5px 20px;
+                }
+            }
+        }
+    }
+    main{
+        section#cv{
+            text-align: center;
+            img{
+                width: 450px;
+            }
+            h4{
+                font-size: 35px;
+                margin-top: 40px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+    footer{
+        
+        .footer-nav{
+                .nav-link{
+                    font-size: 16px;
+                }            
+        }
+    }
+}
+@media (max-width:768px){
+    header{
+        .header-jobs{
+            form{
+                .search-input{
+                    input{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        section#category{
+            .card-serv{
+                h4{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+        section#jobs{
+            .card-job{
+                padding: 15px;
+                .job-title{
+                    font-size: 20px;
+                }
+                img{
+                    width: 35px !important;
+                    height: 35px;
+                }
+                .job-company{
+                    margin-left: 3px;
+                }
+                .job-category{
+                    margin-left: 3px;
+                }
+                .job-apply{
+                    h5{
+                        font-size: 14px;
+                    }
+                    .button{
+                        padding: 5px 10px;
+                    }
+                }
+            }
+        }
+        section#cv{
+            h4{
+                font-size: 30px;
+            }
+        }
+    }
+    footer{
+        padding-left: 5px;
+        padding-right: 5px;
+        .join-newspaper{
+            h2{
+                font-size: 35px;
+            }
+        }
+        .footer-nav{
+            .nav-link{
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media (max-width:575.5px){
+    header{
+        .navbar{
+            padding: 20px;
+        }
+        .header-jobs{
+            .header-title{
+                font-size: 40px;
+                width: auto;
+            }
+            .header-candidate{
+                font-size: 18px;
+            }
+            form{
+                width: 300px;
+                padding: 20px;
+                .search-input{
+                    input{
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                    }
+                    #search-keyword{
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        .section-title{
+            font-size: 40px;
+        }
+        section#category{
+            .card-serv{
+                h4{
+                    font-size: 21px;
+                }
+                
+            }
+        }
+        section#jobs{
+            .card-job{
+                img{
+                    width: 40px !important;
+                    height: 40px;
+                }
+            }
+        }
+        section#cv{
+            h4{
+                font-size: 25px;
+            }
+            p{
+                font-size: 12px;
+            }
+            .upload{
+                label{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    footer{
+        padding-top: 150px;
+        .join-newspaper{
+            h2{
+                font-size: 28px;
+            }
+            .news-email{
+                input{
+                    padding-right: 0;
+                }
+                .button{
+                    font-size: 14px;
+                    padding: 5px 10px;
+                }
+            }
+        }
+        .footer-nav{
+            .nav-link{
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+}
